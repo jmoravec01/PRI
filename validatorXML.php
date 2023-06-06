@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>HOME</title>
+    <title>VALIDÁTOR</title>
     <link rel="icon" href="./files/earth.svg" type="image/x-icon">
     <link rel="stylesheet" href="style/styles.scss">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -28,7 +28,7 @@
                             <a href="showXML.php">Show XML</a>
                         </li>
                         <li>
-                            <a href="showXML.php">Validátor XML</a>
+                            <a href="validatorXML.php">Validátor XML</a>
                         </li>
                         <li>
                             <a href="#">Formulář</a>
