@@ -22,7 +22,10 @@
                                 <a href="index.php">Home</a>
                             </li>
                             <li>
-                                <a href="showXML.php">XML</a>
+                                <a href="showXML.php">Show XML</a>
+                            </li>
+                            <li>
+                                <a href="validatorXML.php">Validátor XML</a>
                             </li>
                             <li>
                                 <a href="showXML.php">Formulář</a>
