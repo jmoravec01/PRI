@@ -1,51 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<fakulta dekan="varady">
-    <katedra web="https://ki.ujep.cz">
-        <vedouci>
-            <jmeno>Jiří Škvor</jmeno>
-            <telefon>+420 123 456 789</telefon>
-            <email>skvorobecny@ujep.cz</email>
-            <pozice>vsechnovim</pozice>
-        </vedouci>
-        <!-- odebráni zaměstnanci -->
-        <predmety>
-            <predmet zkratka="dis">
-                <nazev>Dependabilita informačních systémů</nazev>
+<fakulta děkan="varady">
+    <katedra zkratka_katedry="ki" webové_stránky="https://ki.ujep.cz">
+        <vedoucí>
+            <jméno>Jiří Škvor</jméno>
+            <telefon>+420 000 000 000</telefon>
+        </vedoucí>
+        <zaměstnanci>
+            <zaměstnanec>
+                <jméno>Franta Okoun</jméno>
+                <telefon>+420 123 456 789</telefon>
+                <email>okoun@ujep.cz</email>
+                <pozice>
+                    <lektor/>
+                </pozice>
+            </zaměstnanec>
+            <zaměstnanec>
+                <jméno>Ludmila Šulcová</jméno>
+                <telefon>+420 314 592 651</telefon>
+                <pozice>
+                    <superman/>
+                    <!--  tady změna -->
+                </pozice>
+            </zaměstnanec>
+            <zaměstnanec>
+                <jméno>Mečislav Zlatohlavý</jméno>
+                <pozice>
+                    <odborný_asistent/>
+                </pozice>
+            </zaměstnanec>
+        </zaměstnanci>
+        <předměty>
+            <předmět zkratka="dis">
+                <název>Dependabilita informačních systémů</název>
                 <popis>
-                Kurz uvádí do problematiky dependability informačních systémů. V rámci kurzu budou podrobně vysvětleny otázky samokontroly a samodiagnostiky počítačových systémů. Kurz bude zaměřen zejména na spolehlivost a odolnost proti závadám informačních systémů.
+                Kurz uvádí do problematiky dependability informačních systémů. V rámci kurzu budou podrobně vysvětleny otázky samokontroly a samodiagnostiky počítačových systémů. Kurz bude zaměřen zejména na spolehlivost a odolnost proti závadám informačních systémů. 
                 </popis>
-            </predmet>
-            <predmet zkratka="pri">
-                <nazev>Programování pro internet</nazev>
+            </předmět>
+            <předmět zkratka="pri">
+                <název>Programování pro internet </název>
                 <popis>
-                Kurz dává studentům teoretické znalosti XML technologii a praktické zkušenosti práce s XML soubory. V kurzu se uvažuje návrh webových aplikací (včetně aplikací pracujících s databázemi). V průběhu kurzu bude vytvořeno a zpracováno několik souborů XML. Uvažují se otázky extrakce informací z obsahu XML a její zobrazení na webových stránkách (s použitím css, xslt, js a php). V průběhu kurzu budou vytvořeny webové aplikace, jejichž návrh zahrnuje také témata jako AJAX a práce s XML soubory, cookies a sezení, objektově orientované programování, grafiku, práce
-                s databázemi.
+                Kurz dává studentům teoretické znalosti XML technologii a praktické zkušenosti práce s XML soubory. V kurzu se uvažuje návrh webových aplikací (včetně aplikací pracujících s databázemi). V průběhu kurzu bude vytvořeno a zpracováno několik souborů XML. Uvažují se otázky extrakce informací z obsahu XML a její zobrazení na webových stránkách (s použitím css, xslt, js a php). V průběhu kurzu budou vytvořeny webové aplikace, jejichž návrh zahrnuje také témata jako AJAX a práce s XML soubory, cookies a sezení, objektově orientované programování, grafiku, práce s databázemi.
                 </popis>
-            </predmet>
-        </predmety>
+            </předmět>
+        </předměty>
     </katedra>
-    <katedra zkratka_katedry="kma" web="https://kma.ujep.cz/">
-        <vedouci>
-            <jmeno>Jiří Škvor</jmeno>
-            <telefon>+420 475 286 711</telefon>
-            <email>skvorobecny@ujep.cz</email>
-            <pozice>vsechnovim</pozice>
-        </vedouci>
-        <zamestnanci>
-            <zamestnanec>
-                <jmeno>Lucie Loukotová</jmeno>
-                <telefon>+420 475 286 688</telefon>
+    <katedra zkratka_katedry="kma" webové_stránky="https://kma.ujep.cz">
+        <vedoucí>
+            <jméno>Jiří Škvor</jméno>
+            <telefon>+420 000 000 000</telefon>
+        </vedoucí>
+        <zaměstnanci>
+            <zaměstnanec>
+                <jméno>Lucie Loukotová</jméno>
+                <telefon>+420 111 111 111</telefon>
                 <email>loukotka@ujep.cz</email>
-                <pozice>matematicky genius</pozice>
-            </zamestnanec>
-        </zamestnanci>
-        <predmety>
-            <predmet zkratka="MT2">
-                <nazev>Matematika 2</nazev>
+                <pozice>
+                    <lektor/>
+                </pozice>
+            </zaměstnanec>
+        </zaměstnanci>
+        <předměty>
+            <předmět zkratka="MT2">
+                <název>Matematika 2</název>
                 <popis>
                 Cílem kurzu je seznámit posluchače se základními pojmy a metodami výpočtů ve třech oblastech ? lineární algebře, diferenciálním počtu funkcí více reálných proměnných a obyčejných diferenciálních rovnicích. Vzhledem k rozsahu kurzu jde vždy jen o úvod do dané problematiky. V případě lineární algebry je cílem naučit posluchače řešit soustavy lineárních rovnic, u obou dalších partií bude důraz kladen i na použití probíraných poznatků v ostatních přírodních vědách.
                 </popis>
-            </predmet>
-        </predmety>
+            </předmět>
+        </předměty>
     </katedra>
 </fakulta>

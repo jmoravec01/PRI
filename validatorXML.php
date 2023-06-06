@@ -58,12 +58,23 @@
                 if (isset($_FILES['xmlFile']) && $_FILES['xmlFile']['error'] === UPLOAD_ERR_OK) {
                     $xmlFilePath = $_FILES['xmlFile']['tmp_name'];
 
-                    // Perform XML validation
+                    // Perform XML validation 
                     libxml_use_internal_errors(true);
                     $dom = new DOMDocument();
                     $dom->load($xmlFilePath);
+
+                    // XSD
                     $isValid = $dom->schemaValidate('./xmls/nevim.xsd');
-                    $dtdIsValid = validateXmlAgainstDtd($xmlFilePath);
+
+                    // DTD
+                    $dom->validateOnParse = true;
+                    $domImplementation = new DOMImplementation();
+                    $doctype = $domImplementation->createDocumentType('fakulta', '', './xmls/nevim.dtd');
+                    $newDom = $domImplementation->createDocument(null, '', $doctype);
+                    $xmlContent = $dom->documentElement;
+                    $newContent = $newDom->importNode($xmlContent, true);
+                    $newDom->appendChild($newContent);
+                    $dtdIsValid = $newDom->validate();
                     libxml_clear_errors();
 
                     // VALIDACE POMOCÍ XSD A DTD
@@ -126,28 +137,6 @@
                 } else {
                     echo "<p>DEJ TAM NĚJAKEJ SOUBOR</p>";
                 }
-            }
-            function validateXmlAgainstDtd($xmlFilePath)
-            {
-                $dtdFilePath = './xmls/nevim.dtd';
-                libxml_use_internal_errors(true);
-
-                // Create a DOMDocument with the XML file
-                $domXml = new DOMDocument();
-                $domXml->load($xmlFilePath);
-
-                // Create a DOMImplementation
-                $implementation = new DOMImplementation();
-
-                // Create a DOMDocumentType and associate the DTD file
-                $doctype = $implementation->createDocumentType('root', '', $dtdFilePath);
-                $domXml->appendChild($doctype);
-
-                // Validate XML against DTD
-                $isValid = $domXml->validate();
-
-                libxml_clear_errors();
-                return $isValid;
             }
             ?>
         </div>
