@@ -1,49 +1,52 @@
-<?php
-// XML content
-$xmlContent = '<?xml version="1.0" encoding="UTF-8"?>
-<root>
-  <element attribute="Attribute 1">Value 1</element>
-  <element attribute="Attribute 2">Value 2</element>
-  <element attribute="Attribute 3">Value 3</element>
-</root>';
+<head>
+    <meta charset="UTF-8">
+    <title>PRI show XML</title>
+    <link rel="stylesheet" href="style/styles.scss">
+</head>
 
-// XSLT content
-$xsltContent = '<?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-  <xsl:output method="html" indent="yes" />
-  <xsl:template match="/">
-    <html>
-      <head>
-        <title>XML to HTML Transformation</title>
-      </head>
-      <body>
-        <h1>XML to HTML Transformation</h1>
-        <xsl:apply-templates />
-      </body>
-    </html>
-  </xsl:template>
-  <xsl:template match="element">
-    <div>
-      <h2>
-        <xsl:value-of select="@attribute" />
-      </h2>
-      <p>
-        <xsl:value-of select="." />
-      </p>
-    </div>
-  </xsl:template>
-</xsl:stylesheet>';
+<body>
+    <main>
+        <header>
+            <section class="navigation">
+                <div class="nav-container">
+                    <div class="brand">
+                        <img src="/files/icons8-homer-simpson.gif" alt="">
+                        <a href="index.php">Split-Calculator</a>
+                    </div>
 
-// Create the XML and XSLT documents
-$xml = new DOMDocument();
-$xml->loadXML($xmlContent);
+                    <nav>
+                        <div class="nav-mobile"><a id="navbar-toggle" href="#!"><span></span></a></div>
+                        <ul class="nav-list">
+                            <li>
+                                <a href="#">Home</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </section>
 
-$xslt = new DOMDocument();
-$xslt->loadXML($xsltContent);
+        </header>
 
-// Create the XSLT processor and import the XSLT stylesheet
-$processor = new XSLTProcessor();
-$processor->importStylesheet($xslt);
+        <section>
+            <?php
+            if (file_exists("xmls/nevim.xml")) {
+                $dom = new DOMDocument();
+                $dom->load("xmls/nevim.xml");
 
-// Apply the XSLT transformation
-$html = $processor->transformToXML($xml);
+                $xslDoc = new DOMDocument();
+                $xslDoc->load('xmls/nevim.xslt');
+
+                $processor = new XSLTProcessor();
+                $processor->importStylesheet($xslDoc);
+
+                $html = $processor->transformToXML($dom);
+                echo $html;
+            } else {
+                echo "File doesn't exist";
+            }
+            ?>
+        </section>
+    </main>
+</body>
+
+</html>

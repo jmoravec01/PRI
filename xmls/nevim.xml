@@ -53,12 +53,12 @@
             </zamestnanec>
         </zamestnanci>
         <predmety>
-            <předmět zkratka="MT2">
+            <predmet zkratka="MT2">
                 <nazev>Matematika 2</nazev>
                 <popis>
                 Cílem kurzu je seznámit posluchače se základními pojmy a metodami výpočtů ve třech oblastech ? lineární algebře, diferenciálním počtu funkcí více reálných proměnných a obyčejných diferenciálních rovnicích. Vzhledem k rozsahu kurzu jde vždy jen o úvod do dané problematiky. V případě lineární algebry je cílem naučit posluchače řešit soustavy lineárních rovnic, u obou dalších partií bude důraz kladen i na použití probíraných poznatků v ostatních přírodních vědách.
                 </popis>
-            </předmět>
+            </predmet>
         </predmety>
     </katedra>
 </fakulta>
