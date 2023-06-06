@@ -27,10 +27,10 @@
                             <a href="showXML.php">XML</a>
                         </li>
                         <li>
-                            <a href="showXML.php">Formulář</a>
+                            <a href="#">Formulář</a>
                         </li>
                         <li>
-                            <a href="showXML.php">DB</a>
+                            <a href="#">DB</a>
                         </li>
                     </ul>
                 </nav>
