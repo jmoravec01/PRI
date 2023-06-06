@@ -12,7 +12,7 @@ body {
   margin: 0;
   padding: 0;
   min-height: 100vh;
-  background: linear-gradient(120deg, #2980b9, #8e44ad);
+  background: linear-gradient(120deg, #2f7c40, #2f9a33);
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -25,10 +25,25 @@ h1.heading {
   color: #ffffff;
   font-style: oblique;
 }
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
+.center h1 {
+  text-align: center;
+  padding: 20px 0;
+  border-bottom: 1px solid silver;
+}
+.center form {
+  padding: 0 40px;
+  box-sizing: border-box;
+}
 
 .navigation {
   height: 55px;
-  background: linear-gradient(45deg, #4199fe, #74b4fe);
+  background: linear-gradient(45deg, #000000d9, #000000d0);
 }
 .brand {
   position: absolute;
@@ -83,11 +98,11 @@ nav ul li a {
 }
 nav ul li a:hover,
 nav ul li a:visited:hover {
-  background: #2581dc;
+  background: #26942a;
   color: #ffffff;
 }
 .navbar-dropdown li a {
-  background: #2581dc;
+  background: #26942a;
 }
 nav ul li a:not(:only-child):after,
 nav ul li a:visited:not(:only-child):after {

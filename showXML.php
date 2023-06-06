@@ -10,21 +10,20 @@
             <section class="navigation">
                 <div class="nav-container">
                     <div class="brand">
-                        <img src="/files/icons8-homer-simpson.gif" alt="">
-                        <a href="index.php">Split-Calculator</a>
+                        <img src="./files/earth.svg" alt="cs" width="55" height="55">
+                        <a href="index.php">PRI</a>
                     </div>
 
                     <nav>
                         <div class="nav-mobile"><a id="navbar-toggle" href="#!"><span></span></a></div>
                         <ul class="nav-list">
                             <li>
-                                <a href="#">Home</a>
+                                <a href="index.php">Home</a>
                             </li>
                         </ul>
                     </nav>
                 </div>
             </section>
-
         </header>
 
         <section>
