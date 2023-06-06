@@ -1,6 +1,7 @@
 <head>
     <meta charset="UTF-8">
-    <title>PRI show XML</title>
+    <title>XML</title>
+    <link rel="icon" href="./files/earth.svg" type="image/x-icon">
     <link rel="stylesheet" href="style/styles.scss">
 </head>
 
@@ -20,13 +21,22 @@
                             <li>
                                 <a href="index.php">Home</a>
                             </li>
+                            <li>
+                                <a href="showXML.php">XML</a>
+                            </li>
+                            <li>
+                                <a href="showXML.php">Formulář</a>
+                            </li>
+                            <li>
+                                <a href="showXML.php">DB</a>
+                            </li>
                         </ul>
                     </nav>
                 </div>
             </section>
         </header>
 
-        <section>
+        <section class="center">
             <?php
             if (file_exists("xmls/nevim.xml")) {
                 $dom = new DOMDocument();

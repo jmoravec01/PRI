@@ -3,7 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>PRI show XML</title>
+    <title>HOME</title>
+    <link rel="icon" href="./files/earth.svg" type="image/x-icon">
     <link rel="stylesheet" href="style/styles.scss">
 </head>
 
@@ -23,7 +24,13 @@
                             <a href="index.php">Home</a>
                         </li>
                         <li>
-                            <a href="showXML.php">Show XML</a>
+                            <a href="showXML.php">XML</a>
+                        </li>
+                        <li>
+                            <a href="showXML.php">Formulář</a>
+                        </li>
+                        <li>
+                            <a href="showXML.php">DB</a>
                         </li>
                     </ul>
                 </nav>

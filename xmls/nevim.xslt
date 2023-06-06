@@ -6,6 +6,7 @@
     <html>
       <head>
         <title>Fakulta</title>
+        <link rel="stylesheet" type="text/css" href="../style/styles.scss" />
       </head>
       <body>
         <h1>Fakulta</h1>
