@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <fakulta děkan="varady">
-    <katedra zkratka_katedry="ki" webové_stránky="https://ki.ujep.cz">
+    <katedra zkratka_katedry="KI" webové_stránky="https://ki.ujep.cz">
         <vedoucí>
             <jméno>Jiří Škvor</jméno>
             <telefon>+420 000 000 000</telefon>
@@ -29,13 +29,13 @@
             </zaměstnanec>
         </zaměstnanci>
         <předměty>
-            <předmět zkratka="dis">
+            <předmět zkratka="DIS">
                 <název>Dependabilita informačních systémů</název>
                 <popis>
                 Kurz uvádí do problematiky dependability informačních systémů. V rámci kurzu budou podrobně vysvětleny otázky samokontroly a samodiagnostiky počítačových systémů. Kurz bude zaměřen zejména na spolehlivost a odolnost proti závadám informačních systémů. 
                 </popis>
             </předmět>
-            <předmět zkratka="pri">
+            <předmět zkratka="PRI">
                 <název>Programování pro internet </název>
                 <popis>
                 Kurz dává studentům teoretické znalosti XML technologii a praktické zkušenosti práce s XML soubory. V kurzu se uvažuje návrh webových aplikací (včetně aplikací pracujících s databázemi). V průběhu kurzu bude vytvořeno a zpracováno několik souborů XML. Uvažují se otázky extrakce informací z obsahu XML a její zobrazení na webových stránkách (s použitím css, xslt, js a php). V průběhu kurzu budou vytvořeny webové aplikace, jejichž návrh zahrnuje také témata jako AJAX a práce s XML soubory, cookies a sezení, objektově orientované programování, grafiku, práce s databázemi.
@@ -43,7 +43,7 @@
             </předmět>
         </předměty>
     </katedra>
-    <katedra zkratka_katedry="kma" webové_stránky="https://kma.ujep.cz">
+    <katedra zkratka_katedry="KMA" webové_stránky="https://kma.ujep.cz">
         <vedoucí>
             <jméno>Jiří Škvor</jméno>
             <telefon>+420 000 000 000</telefon>
