@@ -14,7 +14,7 @@
     </xsl:template>
     
     <xsl:template match="katedra">
-        <h2>
+        <h2 style="color: black">
             <xsl:value-of select="@zkratka_katedry"/>
         </h2>
         <p>
