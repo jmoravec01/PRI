@@ -29,13 +29,14 @@
 
             // Check if the query was successful
             if ($result) {
-                // Fetch the rows from the result set
+                $counter = 1;
                 while ($row = mysqli_fetch_assoc($result)) {
                     $column1 = $row['jmeno'];
                     $column2 = $row['email'];
                     $column3 = $row['zprava'];
 
-                    echo "<li>$column1 &rarr; $column2 &rarr; $column3</li>";
+                    echo "<li>$counter &rarr; $column1 &rarr; $column2 &rarr; $column3</li>";
+                    $counter++;
                 }
 
                 // Free the result set
@@ -46,6 +47,7 @@
             ?>
 
         </div>
+
     </main>
 </body>
 
