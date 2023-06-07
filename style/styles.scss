@@ -328,6 +328,20 @@ input {
   text-decoration: none;
   font-size: 14px;
 }
+form#validator > input {
+  width: 100px;
+  background: #1877c5;
+  font-weight: bold;
+  color: white;
+  border: 0 none;
+  border-radius: 10px;
+  cursor: pointer;
+  padding: 10px;
+  margin: 10px 5px;
+  text-decoration: none;
+  font-size: 14px;
+  margin-left: 30%;
+}
 input:hover {
   background-color: #0d4573;
 }

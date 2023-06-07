@@ -29,6 +29,7 @@
         $sql = "INSERT INTO formular (jmeno, email, zprava) VALUES ('$name', '$email', '$message')";
         if (mysqli_query($conn, $sql)) {
             echo '
+            <div style="position: absolute">
             <div class="success alert">
             <div class="content">
             <div class="icon">
@@ -39,12 +40,12 @@
             <button class="close">
             <svg height="18px" id="Layer_1" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="18px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path fill="#69727D" d="M437.5,386.6L306.9,256l130.6-130.6c14.1-14.1,14.1-36.8,0-50.9c-14.1-14.1-36.8-14.1-50.9,0L256,205.1L125.4,74.5  c-14.1-14.1-36.8-14.1-50.9,0c-14.1,14.1-14.1,36.8,0,50.9L205.1,256L74.5,386.6c-14.1,14.1-14.1,36.8,0,50.9  c14.1,14.1,36.8,14.1,50.9,0L256,306.9l130.6,130.6c14.1,14.1,36.8,14.1,50.9,0C451.5,423.4,451.5,400.6,437.5,386.6z"/></svg>
             </button>
+            </div>
             </div>';
         } else {
             echo "Error: " . $sql . "<br>" . mysqli_error($conn);
         }
     }
-
     mysqli_close($conn);
     ?>
 
@@ -74,7 +75,7 @@
             }
 
             // Set the duration (in milliseconds) after which the elements should be automatically closed
-            var duration = 5000; // 5000 milliseconds = 5 seconds
+            var duration = 1500; // 5000 milliseconds = 5 seconds
 
             // Call the autoClose function after the specified duration
             setTimeout(autoClose, duration);

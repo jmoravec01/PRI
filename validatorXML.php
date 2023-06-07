@@ -12,21 +12,7 @@
     ?>
 
     <main>
-        <div class="center">
-            <h1 class="heading">XML Validátor</h1>
-            <form action="" method="post" enctype="multipart/form-data">
-                <div id="file-drop" class="file-drop">
-                    <input type="file" name="xmlFile" id="xmlFile" accept=".xml" class="file-input">
-                    <label for="xmlFile" class="file-label">
-                        <span class="drag-text">Přetáhněte soubor sem</span>
-                    </label>
-                </div>
-                <input type="submit" value="Potvrdit">
-            </form>
-
-
-
-
+        <div style="position: absolute">
             <?php
             if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 // Check if a file was uploaded
@@ -126,11 +112,35 @@
             }
             ?>
         </div>
+        <div class="center">
+            <h1 class="heading">XML Validátor</h1>
+            <form id="validator" action="" method="post" enctype="multipart/form-data">
+                <div id="file-drop" class="file-drop">
+                    <input type="file" name="xmlFile" id="xmlFile" accept=".xml" class="file-input">
+                    <label for="xmlFile" class="file-label">
+                        <span class="drag-text">Přetáhněte soubor sem</span>
+                    </label>
+                </div>
+                <input type="submit" value="Potvrdit">
+            </form>
+        </div>
     </main>
 
     <script>
         $(".close").click(function() {
             $(this).parent().fadeOut();
+        });
+        $(document).ready(function() {
+            // Function to close elements with class "close" after a specified duration
+            function autoClose() {
+                $(".close").parent().fadeOut();
+            }
+
+            // Set the duration (in milliseconds) after which the elements should be automatically closed
+            var duration = 1500; // 5000 milliseconds = 5 seconds
+
+            // Call the autoClose function after the specified duration
+            setTimeout(autoClose, duration);
         });
     </script>
     <script>

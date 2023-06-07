@@ -7,7 +7,7 @@
     <?php
     include 'template.html';
     ?>
-    <main>
+    <main style="color: white">
         <section class="center">
             <?php
             if (file_exists("xmls/nevim.xml")) {
