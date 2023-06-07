@@ -300,7 +300,7 @@ nav ul li ul li a {
   background-color: #006ce3;
 }
 .warning {
-  background-color: rgba(239, 148, 0, 0.2);
+  background-color: rgba(246, 255, 0, 0.67);
   border: 2px solid #ef9400;
 }
 .warning .icon {
@@ -313,4 +313,40 @@ nav ul li ul li a {
 }
 .danger .icon {
   background-color: #da2121;
+}
+
+input {
+  width: 100px;
+  background: #1877c5;
+  font-weight: bold;
+  color: white;
+  border: 0 none;
+  border-radius: 10px;
+  cursor: pointer;
+  padding: 10px;
+  margin: 10px 5px;
+  text-decoration: none;
+  font-size: 14px;
+}
+input:hover {
+  background-color: #0d4573;
+}
+
+.file-drop {
+  border: 2px dashed #ccc;
+  padding: 20px;
+  text-align: center;
+}
+
+span.drag-text {
+  color: white;
+  display: block;
+  cursor: pointer;
+}
+span.drag-text:hover {
+  text-decoration: underline;
+}
+
+#xmlFile {
+  display: none;
 }

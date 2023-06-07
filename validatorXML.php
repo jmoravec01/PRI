@@ -14,13 +14,19 @@
 
     <main>
         <div class="center">
-            <h1 class="heading">XML Validator</h1>
+            <h1 class="heading">XML Validátor</h1>
             <form action="" method="post" enctype="multipart/form-data">
-                <label for="xmlFile">Choose an XML file:</label>
-                <input type="file" name="xmlFile" id="xmlFile" accept=".xml">
-                <br>
-                <input type="submit" value="Validate">
+                <div id="file-drop" class="file-drop">
+                    <input type="file" name="xmlFile" id="xmlFile" accept=".xml" class="file-input">
+                    <label for="xmlFile" class="file-label">
+                        <span class="drag-text">Přetáhněte soubor sem</span>
+                    </label>
+                </div>
+                <input type="submit" value="Potvrdit">
             </form>
+
+
+
 
             <?php
             if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -105,7 +111,18 @@
                         </div>';
                     }
                 } else {
-                    echo "<p>DEJ TAM NĚJAKEJ SOUBOR</p>";
+                    echo '
+                        <div class="warning alert">
+                        <div class="content">
+                        <div class="icon">
+                        <svg height="50" viewBox="0 0 512 512" width="50" xmlns="http://www.w3.org/2000/svg"><path fill="#fff" d="M449.07,399.08,278.64,82.58c-12.08-22.44-44.26-22.44-56.35,0L51.87,399.08A32,32,0,0,0,80,446.25H420.89A32,32,0,0,0,449.07,399.08Zm-198.6-1.83a20,20,0,1,1,20-20A20,20,0,0,1,250.47,397.25ZM272.19,196.1l-5.74,122a16,16,0,0,1-32,0l-5.74-121.95v0a21.73,21.73,0,0,1,21.5-22.69h.21a21.74,21.74,0,0,1,21.73,22.7Z"/></svg>
+                        </div>
+                        <p>CHYBÍ SOUBOR</p>
+                        </div>
+                        <button class="close">
+                        <svg height="18px" id="Layer_1" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="18px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path fill="#69727D" d="M437.5,386.6L306.9,256l130.6-130.6c14.1-14.1,14.1-36.8,0-50.9c-14.1-14.1-36.8-14.1-50.9,0L256,205.1L125.4,74.5  c-14.1-14.1-36.8-14.1-50.9,0c-14.1,14.1-14.1,36.8,0,50.9L205.1,256L74.5,386.6c-14.1,14.1-14.1,36.8,0,50.9  c14.1,14.1,36.8,14.1,50.9,0L256,306.9l130.6,130.6c14.1,14.1,36.8,14.1,50.9,0C451.5,423.4,451.5,400.6,437.5,386.6z"/></svg>
+                        </button>
+                        </div>';
                 }
             }
             ?>
@@ -115,6 +132,43 @@
     <script>
         $(".close").click(function() {
             $(this).parent().fadeOut();
+        });
+    </script>
+    <script>
+        var fileDrop = document.getElementById('file-drop');
+        var fileInput = document.getElementById('xmlFile');
+
+        fileDrop.addEventListener('dragover', function(event) {
+            event.preventDefault();
+            fileDrop.classList.add('drag-over');
+        });
+
+        fileDrop.addEventListener('dragleave', function() {
+            fileDrop.classList.remove('drag-over');
+        });
+
+        fileDrop.addEventListener('drop', function(event) {
+            event.preventDefault();
+            fileDrop.classList.remove('drag-over');
+
+            var files = event.dataTransfer.files;
+            fileInput.files = files;
+        });
+
+        fileInput.addEventListener('change', function() {
+            fileDrop.classList.remove('drag-over');
+        });
+    </script>
+    <script>
+        var fileInput = document.getElementById("xmlFile");
+        var dragText = document.querySelector(".drag-text");
+
+        fileInput.addEventListener("change", function() {
+            if (fileInput.files.length > 0) {
+                dragText.textContent = fileInput.files[0].name;
+            } else {
+                dragText.textContent = "Přetáhněte soubor sem";
+            }
         });
     </script>
 </body>
