@@ -4,43 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <title>VALIDÁTOR</title>
-    <link rel="icon" href="./files/earth.svg" type="image/x-icon">
-    <link rel="stylesheet" href="style/styles.scss">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <body>
-    <header>
-        <section class="navigation">
-            <div class="nav-container">
-                <div class="brand">
-                    <img src="./files/earth.svg" alt="cs" width="55" height="55">
-                    <a href="#">PRI</a>
-                </div>
-
-                <nav>
-                    <div class="nav-mobile"><a id="navbar-toggle" href="#!"><span></span></a></div>
-                    <ul class="nav-list">
-                        <li>
-                            <a href="index.php">Home</a>
-                        </li>
-                        <li>
-                            <a href="showXML.php">Show XML</a>
-                        </li>
-                        <li>
-                            <a href="validatorXML.php">Validátor XML</a>
-                        </li>
-                        <li>
-                            <a href="#">Formulář</a>
-                        </li>
-                        <li>
-                            <a href="#">DB</a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </section>
-    </header>
+    <?php
+    include 'template.html';
+    ?>
 
     <main>
         <div class="center">

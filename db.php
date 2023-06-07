@@ -2,7 +2,8 @@
 <html>
 
 <head>
-    <title>HOME</title>
+    <meta charset="UTF-8">
+    <title>DB</title>
 </head>
 
 <body>
@@ -12,7 +13,7 @@
 
     <main>
         <div class="center">
-            <img src="./files/earth.svg" alt="EARTH">
+            tady bude DB
         </div>
     </main>
 </body>
