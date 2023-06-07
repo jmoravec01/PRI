@@ -22,7 +22,7 @@
     ?>
 
     <main>
-        <div class="center" style="overflow: auto">
+        <div class="center" style="overflow: auto; height: 100%">
             <?php
             // Execute the query
             $result = mysqli_query($conn, "SELECT * FROM formular");
