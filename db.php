@@ -9,11 +9,42 @@
 <body>
     <?php
     include 'template.html';
+
+    $host = 'localhost';
+    $username = 'root';
+    $password = '';
+    $database = 'pri_db';
+
+    $conn = mysqli_connect($host, $username, $password, $database);
+    if (!$conn) {
+        die("Connection failed: " . mysqli_connect_error());
+    }
     ?>
 
     <main>
         <div class="center">
-            tady bude DB
+            <?php
+            // Execute the query
+            $result = mysqli_query($conn, "SELECT * FROM formular");
+
+            // Check if the query was successful
+            if ($result) {
+                // Fetch the rows from the result set
+                while ($row = mysqli_fetch_assoc($result)) {
+                    $column1 = $row['jmeno'];
+                    $column2 = $row['email'];
+                    $column3 = $row['zprava'];
+
+                    echo "<li>$column1 &rarr; $column2 &rarr; $column3</li>";
+                }
+
+                // Free the result set
+                mysqli_free_result($result);
+            } else {
+                echo "Error executing the query: " . mysqli_error($conn);
+            }
+            ?>
+
         </div>
     </main>
 </body>
