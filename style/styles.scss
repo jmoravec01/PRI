@@ -336,6 +336,10 @@ input:hover {
   border: 2px dashed #ccc;
   padding: 20px;
   text-align: center;
+  width: 200px;
+}
+.file-drop.hover {
+  background-color: #ffffff76;
 }
 
 span.drag-text {
