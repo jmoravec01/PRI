@@ -11,8 +11,8 @@
 <!ELEMENT telefon (#PCDATA)>
 <!ELEMENT email (#PCDATA)>
 <!ELEMENT pozice (lektor|odborný_asistent)*>
-<!ELEMENT lektor EMPTY>
-<!ELEMENT odborný_asistent EMPTY>
+<!ELEMENT lektor (#PCDATA)>
+<!ELEMENT odborný_asistent (#PCDATA)>
 
 <!ELEMENT předměty (předmět*)>
 <!ELEMENT předmět (název, popis)>

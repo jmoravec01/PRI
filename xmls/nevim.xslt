@@ -7,7 +7,7 @@
                 <link rel="stylesheet" type="text/css" href="../style/styles.scss" />
             </head>
             <body>
-                <h1 class="heading">Fakulta</h1>
+                <h1 class="heading">Přírodovědecká fakulta</h1>
                 <xsl:apply-templates select="//katedra"/>
             </body>
         </html>

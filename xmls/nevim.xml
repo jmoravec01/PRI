@@ -11,20 +11,20 @@
                 <telefon>+420 123 456 789</telefon>
                 <email>okoun@ujep.cz</email>
                 <pozice>
-                    <lektor/>
+                    <lektor>lektor</lektor>
                 </pozice>
             </zaměstnanec>
             <zaměstnanec>
                 <jméno>Ludmila Šulcová</jméno>
                 <telefon>+420 314 592 651</telefon>
                 <pozice>
-                    <lektor/>
+                    <lektor>lektor</lektor>
                 </pozice>
             </zaměstnanec>
             <zaměstnanec>
                 <jméno>Mečislav Zlatohlavý</jméno>
                 <pozice>
-                    <odborný_asistent/>
+                    <odborný_asistent>odborný asistent</odborný_asistent>
                 </pozice>
             </zaměstnanec>
         </zaměstnanci>
@@ -54,7 +54,7 @@
                 <telefon>+420 111 111 111</telefon>
                 <email>loukotka@ujep.cz</email>
                 <pozice>
-                    <lektor/>
+                    <lektor>lektor</lektor>
                 </pozice>
             </zaměstnanec>
         </zaměstnanci>
