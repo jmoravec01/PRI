@@ -7,46 +7,48 @@
                 <link rel="stylesheet" type="text/css" href="../style/styles.scss" />
             </head>
             <body>
-                <h1>Fakulta</h1>
+                <h1 class="heading">Fakulta</h1>
                 <xsl:apply-templates select="//katedra"/>
             </body>
         </html>
     </xsl:template>
     
     <xsl:template match="katedra">
-        <h2 style="color: black">
+    <div class="show-center">
+        <h2>
             <xsl:value-of select="@zkratka_katedry"/>
         </h2>
         <p>
-            <strong>Vedoucí:</strong>
+            <strong>Vedoucí: </strong>
             <xsl:value-of select="vedoucí/jméno"/> (<xsl:value-of select="vedoucí/telefon"/>)
         </p>
         <p>
-            <strong>Zaměstnanci:</strong>
+            <strong>Zaměstnanci: </strong>
             <xsl:apply-templates select="zaměstnanci/zaměstnanec"/>
         </p>
         <p>
-            <strong>Předměty:</strong>
+            <strong>Předměty: </strong>
             <xsl:apply-templates select="předměty/předmět"/>
         </p>
+        </div>
     </xsl:template>
     
     <xsl:template match="zaměstnanec">
         <ul>
             <li>
-                <strong>Jméno:</strong>
+                <strong>Jméno: </strong>
                 <xsl:value-of select="jméno"/>
             </li>
             <li>
-                <strong>Telefon:</strong>
+                <strong>Telefon: </strong>
                 <xsl:value-of select="telefon"/>
             </li>
             <li>
-                <strong>Email:</strong>
+                <strong>Email: </strong>
                 <xsl:value-of select="email"/>
             </li>
             <li>
-                <strong>Pozice:</strong>
+                <strong>Pozice: </strong>
                 <xsl:value-of select="pozice/*"/>
             </li>
         </ul>
@@ -55,15 +57,15 @@
     <xsl:template match="předmět">
         <ul>
             <li>
-                <strong>Zkratka:</strong>
+                <strong>Zkratka: </strong>
                 <xsl:value-of select="@zkratka"/>
             </li>
             <li>
-                <strong>Název:</strong>
+                <strong>Název: </strong>
                 <xsl:value-of select="název"/>
             </li>
             <li>
-                <strong>Popis:</strong>
+                <strong>Popis: </strong>
                 <xsl:value-of select="popis"/>
             </li>
         </ul>
