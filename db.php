@@ -24,10 +24,8 @@
     <main>
         <div class="center" style="overflow: auto; height: 100%; margin-top: 25px; margin-bottom: 25px">
             <?php
-            // Execute the query
             $result = mysqli_query($conn, "SELECT * FROM formular");
 
-            // Check if the query was successful
             if ($result) {
                 $counter = 1;
                 while ($row = mysqli_fetch_assoc($result)) {
@@ -39,13 +37,11 @@
                     $counter++;
                 }
 
-                // Free the result set
                 mysqli_free_result($result);
             } else {
                 echo "Error executing the query: " . mysqli_error($conn);
             }
             ?>
-
         </div>
 
     </main>
