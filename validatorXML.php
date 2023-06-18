@@ -34,8 +34,6 @@
                         </div>';
                     } else {
                         $xmlFilePath = $_FILES['xmlFile']['tmp_name'];
-                        // Continue with your code for processing the XML file
-
                         // Perform XML validation 
                         libxml_use_internal_errors(true);
                         $dom = new DOMDocument();
