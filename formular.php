@@ -25,7 +25,6 @@
         $email = mysqli_real_escape_string($conn, $_POST['email']);
         $message = mysqli_real_escape_string($conn, $_POST['message']);
 
-        // Step 7: Insert the data into the database
         $sql = "INSERT INTO formular (jmeno, email, zprava) VALUES ('$name', '$email', '$message')";
         if (mysqli_query($conn, $sql)) {
             echo '
