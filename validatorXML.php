@@ -17,30 +17,48 @@
             if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 // Check if a file was uploaded
                 if (isset($_FILES['xmlFile']) && $_FILES['xmlFile']['error'] === UPLOAD_ERR_OK) {
-                    $xmlFilePath = $_FILES['xmlFile']['tmp_name'];
+                    $fileExtension = pathinfo($_FILES['xmlFile']['name'], PATHINFO_EXTENSION);
 
-                    // Perform XML validation 
-                    libxml_use_internal_errors(true);
-                    $dom = new DOMDocument();
-                    $dom->load($xmlFilePath);
-
-                    // XSD
-                    $isValid = $dom->schemaValidate('./xmls/nevim.xsd');
-
-                    // DTD
-                    $dom->validateOnParse = true;
-                    $domImplementation = new DOMImplementation();
-                    $doctype = $domImplementation->createDocumentType('fakulta', '', './xmls/nevim.dtd');
-                    $newDom = $domImplementation->createDocument(null, '', $doctype);
-                    $xmlContent = $dom->documentElement;
-                    $newContent = $newDom->importNode($xmlContent, true);
-                    $newDom->appendChild($newContent);
-                    $dtdIsValid = $newDom->validate();
-                    libxml_clear_errors();
-
-                    // VALIDACE POMOCÍ XSD A DTD
-                    if ($isValid) {
+                    if ($fileExtension !== 'xml') {
                         echo '
+                        <div class="warning alert">
+                        <div class="content">
+                        <div class="icon">
+                        <svg height="50" viewBox="0 0 512 512" width="50" xmlns="http://www.w3.org/2000/svg"><path fill="#fff" d="M449.07,399.08,278.64,82.58c-12.08-22.44-44.26-22.44-56.35,0L51.87,399.08A32,32,0,0,0,80,446.25H420.89A32,32,0,0,0,449.07,399.08Zm-198.6-1.83a20,20,0,1,1,20-20A20,20,0,0,1,250.47,397.25ZM272.19,196.1l-5.74,122a16,16,0,0,1-32,0l-5.74-121.95v0a21.73,21.73,0,0,1,21.5-22.69h.21a21.74,21.74,0,0,1,21.73,22.7Z"/></svg>
+                        </div>
+                        <p>ŠPATNÝ TYP SOUBORU</p>
+                        </div>
+                        <button class="close">
+                        <svg height="18px" id="Layer_1" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="18px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path fill="#69727D" d="M437.5,386.6L306.9,256l130.6-130.6c14.1-14.1,14.1-36.8,0-50.9c-14.1-14.1-36.8-14.1-50.9,0L256,205.1L125.4,74.5  c-14.1-14.1-36.8-14.1-50.9,0c-14.1,14.1-14.1,36.8,0,50.9L205.1,256L74.5,386.6c-14.1,14.1-14.1,36.8,0,50.9  c14.1,14.1,36.8,14.1,50.9,0L256,306.9l130.6,130.6c14.1,14.1,36.8,14.1,50.9,0C451.5,423.4,451.5,400.6,437.5,386.6z"/></svg>
+                        </button>
+                        </div>';
+                    } else {
+                        $xmlFilePath = $_FILES['xmlFile']['tmp_name'];
+                        // Continue with your code for processing the XML file
+
+                        // Perform XML validation 
+                        libxml_use_internal_errors(true);
+                        $dom = new DOMDocument();
+                        $dom->load($xmlFilePath);
+
+                        // XSD
+                        $isValid = $dom->schemaValidate('./xmls/nevim.xsd');
+
+                        // DTD
+                        $dom->validateOnParse = true;
+                        $domImplementation = new DOMImplementation();
+                        $doctype = $domImplementation->createDocumentType('fakulta', '', './xmls/nevim.dtd');
+                        $newDom = $domImplementation->createDocument(null, '', $doctype);
+                        $xmlContent = $dom->documentElement;
+                        $newContent = $newDom->importNode($xmlContent, true);
+                        $newDom->appendChild($newContent);
+                        $dtdIsValid = $newDom->validate();
+                        libxml_clear_errors();
+
+
+                        // VALIDACE POMOCÍ XSD A DTD
+                        if ($isValid) {
+                            echo '
                         <div class="success alert">
                         <div class="content">
                         <div class="icon">
@@ -53,8 +71,8 @@
                         </button>
                         </div>
                         ';
-                    } else {
-                        echo '
+                        } else {
+                            echo '
                         <div class="danger alert">
                         <div class="content">
                         <div class="icon">
@@ -66,9 +84,9 @@
                         <svg height="18px" id="Layer_1" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="18px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path fill="#69727D" d="M437.5,386.6L306.9,256l130.6-130.6c14.1-14.1,14.1-36.8,0-50.9c-14.1-14.1-36.8-14.1-50.9,0L256,205.1L125.4,74.5  c-14.1-14.1-36.8-14.1-50.9,0c-14.1,14.1-14.1,36.8,0,50.9L205.1,256L74.5,386.6c-14.1,14.1-14.1,36.8,0,50.9  c14.1,14.1,36.8,14.1,50.9,0L256,306.9l130.6,130.6c14.1,14.1,36.8,14.1,50.9,0C451.5,423.4,451.5,400.6,437.5,386.6z"/></svg>
                         </button>
                         </div>';
-                    }
-                    if ($dtdIsValid) {
-                        echo '
+                        }
+                        if ($dtdIsValid) {
+                            echo '
                         <div class="success alert">
                         <div class="content">
                         <div class="icon">
@@ -81,8 +99,8 @@
                         </button>
                         </div>
                         ';
-                    } else {
-                        echo '
+                        } else {
+                            echo '
                         <div class="danger alert">
                         <div class="content">
                         <div class="icon">
@@ -94,6 +112,7 @@
                         <svg height="18px" id="Layer_1" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="18px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path fill="#69727D" d="M437.5,386.6L306.9,256l130.6-130.6c14.1-14.1,14.1-36.8,0-50.9c-14.1-14.1-36.8-14.1-50.9,0L256,205.1L125.4,74.5  c-14.1-14.1-36.8-14.1-50.9,0c-14.1,14.1-14.1,36.8,0,50.9L205.1,256L74.5,386.6c-14.1,14.1-14.1,36.8,0,50.9  c14.1,14.1,36.8,14.1,50.9,0L256,306.9l130.6,130.6c14.1,14.1,36.8,14.1,50.9,0C451.5,423.4,451.5,400.6,437.5,386.6z"/></svg>
                         </button>
                         </div>';
+                        }
                     }
                 } else {
                     echo '
@@ -125,73 +144,7 @@
             </form>
         </div>
     </main>
-
-    <script>
-        $(".close").click(function() {
-            $(this).parent().fadeOut();
-        });
-        $(document).ready(function() {
-            // Function to close elements with class "close" after a specified duration
-            function autoClose() {
-                $(".close").parent().fadeOut();
-            }
-
-            // Set the duration (in milliseconds) after which the elements should be automatically closed
-            var duration = 1500; // 5000 milliseconds = 5 seconds
-
-            // Call the autoClose function after the specified duration
-            setTimeout(autoClose, duration);
-        });
-    </script>
-    <script>
-        var fileInput = document.getElementById("xmlFile");
-        var dragText = document.querySelector(".drag-text");
-
-        fileInput.addEventListener("change", function() {
-            if (fileInput.files.length > 0) {
-                dragText.textContent = fileInput.files[0].name;
-            } else {
-                dragText.textContent = "Přetáhněte soubor sem";
-            }
-        });
-    </script>
-    <script>
-        var fileDrop = document.getElementById("file-drop");
-        var fileInput = document.getElementById("xmlFile");
-        var dragText = document.querySelector(".drag-text");
-
-        // Handle drag events
-        fileDrop.addEventListener("dragover", function(e) {
-            e.preventDefault();
-            fileDrop.classList.add("hover");
-            dragText.textContent = "Pusť";
-        });
-
-        fileDrop.addEventListener("dragleave", function(e) {
-            e.preventDefault();
-            fileDrop.classList.remove("hover");
-            dragText.textContent = "Přetáhněte soubor sem";
-        });
-
-        fileDrop.addEventListener("drop", function(e) {
-            e.preventDefault();
-            fileDrop.classList.remove("hover");
-            var files = e.dataTransfer.files;
-            if (files.length > 0) {
-                fileInput.files = files;
-                dragText.textContent = files[0].name;
-            }
-        });
-
-        // Handle file input change event
-        fileInput.addEventListener("change", function() {
-            if (fileInput.files.length > 0) {
-                dragText.textContent = fileInput.files[0].name;
-            } else {
-                dragText.textContent = "Přetáhněte soubor sem";
-            }
-        });
-    </script>
+    <script src="./js/draganddrop.js"></script>
 </body>
 
 </html>

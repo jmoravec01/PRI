@@ -64,23 +64,7 @@
             </form>
         </div>
     </main>
-    <script>
-        $(".close").click(function() {
-            $(this).parent().fadeOut();
-        });
-        $(document).ready(function() {
-            // Function to close elements with class "close" after a specified duration
-            function autoClose() {
-                $(".close").parent().fadeOut();
-            }
-
-            // Set the duration (in milliseconds) after which the elements should be automatically closed
-            var duration = 1500; // 5000 milliseconds = 5 seconds
-
-            // Call the autoClose function after the specified duration
-            setTimeout(autoClose, duration);
-        });
-    </script>
+    <script src="./js/alerts.js"></script>
 </body>
 
 </html>

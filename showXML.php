@@ -14,7 +14,7 @@
             $dom->load("xmls/nevim.xml");
 
             $xslDoc = new DOMDocument();
-            $xslDoc->load('xmls/nevim.xslt');
+            $xslDoc->load('xmls/nevim.xsl');
 
             $processor = new XSLTProcessor();
             $processor->importStylesheet($xslDoc);

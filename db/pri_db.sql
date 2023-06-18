@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Počítač: 127.0.0.1:3306
--- Vytvořeno: Ned 18. čen 2023, 09:58
+-- Vytvořeno: Ned 18. čen 2023, 12:33
 -- Verze serveru: 8.0.31
 -- Verze PHP: 8.0.26
 
@@ -24,6 +24,46 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Struktura tabulky `cookies_browser`
+--
+
+DROP TABLE IF EXISTS `cookies_browser`;
+CREATE TABLE IF NOT EXISTS `cookies_browser` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `browser` varchar(50) NOT NULL,
+  `ip_address` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Vypisuji data pro tabulku `cookies_browser`
+--
+
+INSERT INTO `cookies_browser` (`id`, `browser`, `ip_address`) VALUES
+(1, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0', NULL),
+(2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWeb', NULL),
+(3, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWeb', NULL),
+(4, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWeb', NULL),
+(5, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0', NULL),
+(6, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0', NULL),
+(7, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0', NULL),
+(8, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0', NULL),
+(9, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0', NULL),
+(10, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0', NULL),
+(11, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0', NULL),
+(12, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0', '127.0.0.1'),
+(13, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0', '127.0.0.1'),
+(14, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0', '127.0.0.1'),
+(15, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0', '127.0.0.1'),
+(16, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0', '127.0.0.1'),
+(17, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0', '127.0.0.1'),
+(18, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0', '127.0.0.1'),
+(19, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0', '127.0.0.1'),
+(20, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0', '127.0.0.1');
+
+-- --------------------------------------------------------
+
+--
 -- Struktura tabulky `formular`
 --
 
@@ -34,7 +74,7 @@ CREATE TABLE IF NOT EXISTS `formular` (
   `email` varchar(320) NOT NULL,
   `zprava` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=135 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=136 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Vypisuji data pro tabulku `formular`
@@ -174,7 +214,8 @@ INSERT INTO `formular` (`id`, `jmeno`, `email`, `zprava`) VALUES
 (131, '', '', ''),
 (132, '', '', ''),
 (133, '', '', ''),
-(134, 'dfghfg', 'aghoj@asdfsdd.in', 'dfgdfg');
+(134, 'dfghfg', 'aghoj@asdfsdd.in', 'dfgdfg'),
+(135, 'dfg', 'dfg@fghfgh.cz', 'dghjmhjkuikol,');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
