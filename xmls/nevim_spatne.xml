@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <fakulta děkan="varady">
     <katedra zkratka_katedry="ki" webové_stránky="https://ki.ujep.cz">
+        <zkratka_katedry>ki</zkratka_katedry>
         <vedoucí>
             <jméno>Jiří Škvor</jméno>
             <telefon>+420 000 000 000</telefon>

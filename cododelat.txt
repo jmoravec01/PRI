@@ -1,0 +1,1 @@
+vysvětlit XPath v XSLT, vytvořit XML pomocí SimpleXML, základy OOP v PHP
