@@ -38,7 +38,7 @@
         $xml->addAttribute('děkan', $dekan);
 
         // katedra
-        $katedra = $xml->addChild('katedra');
+        $katedra = $xml->addChild('katedra'); //vrací objekt katedra
         $katedra->addAttribute('zkratka_katedry', $zkratka_katedry);
         $katedra->addAttribute('webové_stránky', $webove_stranky);
 

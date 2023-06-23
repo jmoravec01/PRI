@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fakulta děkan="fcgvhfghfgh">
+  <katedra zkratka_katedry="fghfghfgh" webové_stránky="fghfhfgh">
+    <vedoucí>
+      <jméno>fghfghfgh</jméno>
+      <telefon>+420704128130</telefon>
+    </vedoucí>
+    <zaměstnanci>
+      <zaměstnanec>
+        <jméno/>
+        <telefon/>
+        <email/>
+        <pozice>
+          <lektor/>
+        </pozice>
+      </zaměstnanec>
+    </zaměstnanci>
+    <předměty>
+      <předmět zkratka="">
+        <název/>
+        <popis/>
+      </předmět>
+    </předměty>
+  </katedra>
+</fakulta>
