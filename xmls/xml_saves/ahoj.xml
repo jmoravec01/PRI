@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fakulta děkan="Moravec">
+  <katedra zkratka_katedry="PRI" webové_stránky="pri.cz">
+    <vedoucí>
+      <jméno>Jakub Moravec</jméno>
+      <telefon/>
+    </vedoucí>
+    <zaměstnanci>
+      <zaměstnanec>
+        <jméno/>
+        <telefon/>
+        <email/>
+        <pozice>
+          <odborný_asistent/>
+        </pozice>
+      </zaměstnanec>
+    </zaměstnanci>
+    <předměty>
+      <předmět zkratka="AJU">
+        <název>SDAS</název>
+        <popis>FDSSDF</popis>
+      </předmět>
+    </předměty>
+  </katedra>
+</fakulta>

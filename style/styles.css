@@ -471,3 +471,14 @@ h2 {
   font-size: 20px;
   opacity: 0.7;
 }
+
+.create {
+  display: flex;
+  color: white;
+}
+.create-column {
+  flex: 1;
+}
+.create-row {
+  display: flex;
+}
