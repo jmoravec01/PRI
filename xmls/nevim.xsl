@@ -4,7 +4,7 @@
         <html>
             <head>
                 <title>Fakulta</title>
-                <link rel="stylesheet" type="text/css" href="../style/styles.scss" />
+                <link rel="stylesheet" type="text/css" href="../style/styles.css" />
             </head>
             <body>
                 <h1 class="heading">Přírodovědecká fakulta</h1>
@@ -12,27 +12,26 @@
             </body>
         </html>
     </xsl:template>
-    
     <xsl:template match="katedra">
-    <div class="show-center">
-        <h2>
-            <xsl:value-of select="@zkratka_katedry"/>
-        </h2>
-        <p>
-            <strong>Vedoucí: </strong>
-            <xsl:value-of select="vedoucí/jméno"/> (<xsl:value-of select="vedoucí/telefon"/>)
-        </p>
-        <p>
-            <strong>Zaměstnanci: </strong>
-            <xsl:apply-templates select="zaměstnanci/zaměstnanec"/>
-        </p>
-        <p>
-            <strong>Předměty: </strong>
-            <xsl:apply-templates select="předměty/předmět"/>
-        </p>
+        <div class="show-center">
+            <h2>
+                <xsl:value-of select="@zkratka_katedry"/>
+            </h2>
+            <p>
+                <strong>Vedoucí: </strong>
+                <xsl:value-of select="vedoucí/jméno"/> (
+                <xsl:value-of select="vedoucí/telefon"/>)
+            </p>
+            <p>
+                <strong>Zaměstnanci: </strong>
+                <xsl:apply-templates select="zaměstnanci/zaměstnanec"/>
+            </p>
+            <p>
+                <strong>Předměty: </strong>
+                <xsl:apply-templates select="předměty/předmět"/>
+            </p>
         </div>
     </xsl:template>
-    
     <xsl:template match="zaměstnanec">
         <ul>
             <li>
@@ -53,7 +52,6 @@
             </li>
         </ul>
     </xsl:template>
-    
     <xsl:template match="předmět">
         <ul>
             <li>
@@ -70,5 +68,4 @@
             </li>
         </ul>
     </xsl:template>
-    
 </xsl:stylesheet>

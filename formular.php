@@ -63,7 +63,6 @@
             </form>
         </div>
     </main>
-    <script src="./js/alerts.js"></script>
 </body>
 
 </html>
