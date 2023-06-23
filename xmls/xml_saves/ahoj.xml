@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<fakulta děkan="Moravec">
-  <katedra zkratka_katedry="PRI" webové_stránky="pri.cz">
+<fakulta děkan="Jakub Moravec">
+  <katedra zkratka_katedry="KI" webové_stránky="ki.ujep.cz">
     <vedoucí>
       <jméno>Jakub Moravec</jméno>
-      <telefon/>
+      <telefon>+420704128130</telefon>
     </vedoucí>
     <zaměstnanci>
       <zaměstnanec>
-        <jméno/>
-        <telefon/>
-        <email/>
+        <jméno>Jakub Moravec</jméno>
+        <telefon>+420704128130</telefon>
+        <email>kubik.moravec@email.cz</email>
         <pozice>
           <odborný_asistent/>
         </pozice>
       </zaměstnanec>
     </zaměstnanci>
     <předměty>
-      <předmět zkratka="AJU">
-        <název>SDAS</název>
-        <popis>FDSSDF</popis>
+      <předmět zkratka="PRI">
+        <název>Prográmko pro internet</název>
+        <popis>srandy kopec</popis>
       </předmět>
     </předměty>
   </katedra>
