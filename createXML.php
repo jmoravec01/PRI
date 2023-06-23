@@ -14,7 +14,7 @@
     <?php
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-        // INPUTY
+        // proměnné
         $dekan = $_POST['dekan'];
         $zkratka_katedry = $_POST['zkratka_katedry'];
         $webove_stranky = $_POST['webove_stranky'];
@@ -148,27 +148,27 @@
                     <label for="nazev_souboru">Název souboru</label>
                     <input type="text" name="nazev_souboru" id="nazev_souboru" required><br><br>
 
-                    <label for="dekan">Děkan</label>
-                    <input type="text" id="dekan" name="dekan"><br><br>
+                    <label for="dekan">Děkan PŘF</label>
+                    <input type="text" id="dekan" name="dekan" required><br><br>
                 </div>
 
                 <div class="create">
                     <div class="create-column">
                         <h3>KATEDRA</h3>
                         <label for="zkratka_katedry">zkratka</label>
-                        <input type="text" id="zkratka_katedry" name="zkratka_katedry"><br><br>
+                        <input type="text" id="zkratka_katedry" name="zkratka_katedry" required><br><br>
 
                         <label for="webove_stranky">web</label>
-                        <input type="text" id="webove_stranky" name="webove_stranky"><br><br>
+                        <input type="text" id="webove_stranky" name="webove_stranky" required><br><br>
                     </div>
 
                     <div class="create-column">
                         <h3>VEDOUCÍ</h3>
                         <label for="vedouci_jmeno">jméno</label>
-                        <input type="text" id="vedouci_jmeno" name="vedouci_jmeno"><br><br>
+                        <input type="text" id="vedouci_jmeno" name="vedouci_jmeno" required><br><br>
 
                         <label for="vedouci_telefon">telefon</label>
-                        <input type="text" id="vedouci_telefon" name="vedouci_telefon"><br><br>
+                        <input type="text" id="vedouci_telefon" name="vedouci_telefon" required><br><br>
                     </div>
 
                     <div class="create-column">
