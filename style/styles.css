@@ -315,6 +315,10 @@ nav ul li ul li a {
   background-color: #da2121;
 }
 
+h3 {
+  text-decoration: underline;
+}
+
 select {
   background-color: #0563af;
   color: white;
